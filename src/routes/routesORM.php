@@ -18,6 +18,9 @@ return function (App $app) {
         $this->get('/', function ($request, $response, $args) {
           //return cd::all()->toJson();
           $todosLosCds=cd::all();
+          //$todosLosCds= new cd;
+          //$todosLosCds->titel = "Nuevo titulo";
+          //$todosLosCds->save();
           $newResponse = $response->withJson($todosLosCds, 200);  
           return $newResponse;
         });

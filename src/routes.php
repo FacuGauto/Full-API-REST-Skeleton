@@ -32,6 +32,14 @@ return function (App $app) {
         return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
 
+    $app->post('/[{name}]', function (Request $request, Response $response, array $args) use ($container) {
+        // Sample log message
+        var_dump($container);
+        //$container->get('logger')->info("Slim-Skeleton '/' route");
+        // $container->get('logger')->addCritical('Hey, a critical log entry!');
+        //return $container->get('renderer')->render($response, 'index.phtml', $args);
+    });
+
 
 
 

@@ -24,6 +24,16 @@ return function (App $app) {
           $newResponse = $response->withJson($todosLosCds, 200);  
           return $newResponse;
         });
+        $this->post('/', function ($request, $response, $args) {
+          $arry_params = $request->getParsedBody();
+          $cd= new cd;
+          $cd->titel = $arry_params['titel'];
+          $cd->interpret = $arry_params['interpret'];
+          $cd->jahr = $arry_params['jahr'];
+          $cd->save();
+          $newResponse = $response->withJson($cd, 200);  
+          return $newResponse;
+        });
     });
 
 
